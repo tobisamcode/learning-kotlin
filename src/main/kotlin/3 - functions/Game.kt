@@ -41,7 +41,7 @@ fun getUserChoice(optionsParam: Array<String>): String {
     return userChoice
 }
 
-fun printResult(userChoice: String, gameChoice: String) {
+fun printResult(userChoice: String, gameChoice: String): Unit {
     var result: String
 
     if (userChoice == gameChoice) result = "Tie!"
