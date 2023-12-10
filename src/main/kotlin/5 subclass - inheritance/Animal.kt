@@ -43,7 +43,7 @@ class Wolf: Canine() {
     override val habitat = "forests"
 
     override fun makeNoise() {
-        println("Hooooowl!")
+        println("Hooooooowl!")
     }
     override fun eat() {
         println("The Wolf is eating $food")
