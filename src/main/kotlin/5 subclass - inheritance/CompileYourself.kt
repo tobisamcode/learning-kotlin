@@ -1,11 +1,11 @@
 open class Monster {
     open fun frighten(): Boolean {
-        println("Aargh!")
+        println("Argh!")
         return true
     }
 }
 
-class Vampyre: Monster() {
+class Vampire: Monster() {
     override fun frighten(): Boolean {
         println("Fancy is a bite?")
         return false
@@ -20,7 +20,7 @@ class Dragon: Monster() {
 }
 
 fun main(args: Array<String>) {
-    val m = arrayOf(Vampyre(), Dragon(), Monster())
+    val m = arrayOf(Vampire(), Dragon(), Monster())
 
     for (item in m) {
         item.frighten()
