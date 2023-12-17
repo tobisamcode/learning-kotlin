@@ -1,4 +1,8 @@
-abstract class Animals {
+interface Roamables {
+    fun roam()
+}
+
+abstract class Animals : Roamables {
     abstract val image: String
     abstract val food: String
     abstract val habitat: String
@@ -7,7 +11,7 @@ abstract class Animals {
     abstract fun makeNoise()
     abstract fun eat()
 
-    open fun roam() {
+    override fun roam() {
         println("The Animal is roaming")
     }
 
@@ -50,18 +54,26 @@ class Wolfs : Canines() {
     }
 }
 
+class Vehicle : Roamables {
+    override fun roam() {
+        println("The vihicle is roaming")
+    }
+}
+
 class Vets {
     fun giveShot(animal: Animals) {
         animal.makeNoise()
     }
 }
 
-fun main(args: Array<String>) {
-    val animals = arrayOf(Hippos(), Wolfs())
+fun main() {
+    val animals = arrayOf(Hippos(), Wolfs(), Vehicle())
 
     for (item in animals) {
         item.roam()
-        item.eat()
+        if (item is Animals) {
+            item.eat()
+        }
     }
 
     val vet = Vets()
