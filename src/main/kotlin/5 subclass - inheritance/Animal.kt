@@ -2,42 +2,42 @@ open class Animal {
     open val image = ""
     open val food = ""
     open val habitat = ""
-    var hunger:Int = 10
+    var hunger: Int = 10
 
-    open fun makeNoise () {
+    open fun makeNoise() {
         println("The Animal is making a noise")
     }
-    open fun eat () {
+    open fun eat() {
         println("The animal is eating")
     }
-    open fun roam () {
+    open fun roam() {
         println("The animal is roaming")
     }
-    fun sleep () {
+    fun sleep() {
         println("The animal is sleeping")
     }
 }
 
-class Hippo: Animal() {
+class Hippo : Animal() {
     override val image = "hippo.jpg"
     override val food = "grass"
-    override  val habitat = "water"
+    override val habitat = "water"
 
     override fun makeNoise() {
         println("Grunt! Grunt!")
     }
-    override  fun eat() {
+    override fun eat() {
         println("The Hippo is eating $food")
     }
 }
 
-open class Canine: Animal() {
+open class Canine : Animal() {
     override fun roam() {
         println("The Canine is roaming")
     }
 }
 
-class Wolf: Canine() {
+class Wolf : Canine() {
     override val image = "wolf.jpg"
     override val food = "meat"
     override val habitat = "forests"
@@ -56,7 +56,7 @@ class Vet {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val animals = arrayOf(Hippo(), Wolf())
     for (item in animals) {
         item.roam()
